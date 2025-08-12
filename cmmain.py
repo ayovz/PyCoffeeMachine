@@ -1,3 +1,5 @@
+import os
+
 from data import MENU
 from data import resources
 import random
@@ -53,6 +55,10 @@ def make_coffee(drink_name, order_ingredients):
     print(f"Here's your {drink_name}! Enjoy☕!")
 
 
+def clear_screen():
+    return os.system('cls' if os.name == 'nt' else 'clear')
+
+
 is_on = True
 
 while is_on:
@@ -70,3 +76,5 @@ while is_on:
                 make_coffee(command.capitalize(), drink["ingredients"])
     else:
         print("Sorry, I don't understand that command.")
+
+    clear_screen()
