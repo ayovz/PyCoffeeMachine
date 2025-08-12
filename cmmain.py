@@ -1,7 +1,6 @@
 import os
 
-from data import MENU
-from data import resources
+from data import MENU, resources, ascii_art
 import random
 
 # TODO : 1. Print Report
@@ -62,6 +61,7 @@ def clear_screen():
 is_on = True
 
 while is_on:
+    print(ascii_art)
     command = input("What would you like? (espresso/latte/cappuccino): ").lower()
 
     if command == "off":
