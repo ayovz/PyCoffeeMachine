@@ -16,7 +16,8 @@ def print_report():
     print(f"Water: {resources['water']} ml")
     print(f"Milk: {resources['milk']} ml")
     print(f"Coffee: {resources['coffee']} g")
-    print(f"money: $ {profit}")
+    print(f"\nMoney: $ {profit}")
+    time.sleep(4)
 
 
 def items_check(order_ingredients):
@@ -24,6 +25,7 @@ def items_check(order_ingredients):
         if order_ingredients[item] > resources[item]:
             print(f"Sorry. Not enough {item}.")
             print("Please inform the operator.")
+            time.sleep(2)
             return False
     return True
 
@@ -53,7 +55,8 @@ def successful_transaction(money_received, drink_price):
 def make_coffee(drink_name, order_ingredients):
     for item in order_ingredients:
         resources[item] -= order_ingredients[item]
-    print(f"Here's your {drink_name}! Enjoy☕!")
+    print(f"\nHere's your {drink_name}! Enjoy☕!")
+    time.sleep(3)
 
 
 def clear_screen():
@@ -78,9 +81,10 @@ while is_on:
                 make_coffee(command.capitalize(), drink["ingredients"])
         else:
             print("\nMachine is Shutting Down...")
-            time.sleep(2)
+            time.sleep(3)
             break
     else:
         print("Sorry, I don't understand that command.")
+        time.sleep(1)
 
     clear_screen()
