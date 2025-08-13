@@ -23,6 +23,7 @@ def items_check(order_ingredients):
     for item in order_ingredients:
         if order_ingredients[item] > resources[item]:
             print(f"Sorry. Not enough {item}.")
+            print("Please inform the operator.")
             return False
     return True
 
@@ -75,12 +76,11 @@ while is_on:
             payment = process_coins()
             if successful_transaction(payment, drink["cost"]):
                 make_coffee(command.capitalize(), drink["ingredients"])
+        else:
+            print("\nMachine is Shutting Down...")
+            time.sleep(2)
+            break
     else:
         print("Sorry, I don't understand that command.")
 
-    time.sleep(3)
-
-    print("Next Customer Please...")
-
-    time.sleep(5)
     clear_screen()
