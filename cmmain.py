@@ -21,7 +21,7 @@ def print_report():
 def items_check(order_ingredients):
     for item in order_ingredients:
         if order_ingredients[item] > resources[item]:
-            print("Sorry. Not enough ingredients.")
+            print(f"Sorry. Not enough {item}.")
             return False
     return True
 
