@@ -1,4 +1,5 @@
 import os
+import time
 
 from data import MENU, resources, ascii_art
 import random
@@ -77,4 +78,9 @@ while is_on:
     else:
         print("Sorry, I don't understand that command.")
 
+    time.sleep(3)
+
+    print("Next Customer Please...")
+
+    time.sleep(5)
     clear_screen()
